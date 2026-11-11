@@ -1,0 +1,88 @@
+name: Download and optimize MƠ Studio photos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/optimize-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image optimizer
+        run: python -m pip install --upgrade Pillow
+      - name: Download selected Pexels photos and compress to JPG
+        run: |
+          python - <<'PY'
+          from io import BytesIO
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from PIL import Image, ImageOps
+          import json
+
+          # Individually selected Pexels photo pages. Images are saved as local JPG assets.
+          photos = {
+              "hero-editorial.jpg": (30415590, 1600),
+              "about-editorial.jpg": (23531833, 1200),
+              "blazer-look.jpg": (12324553, 1000),
+              "everyday-neutral.jpg": (9142805, 1000),
+              "casual-look.jpg": (20167616, 1000),
+              "midi-look.jpg": (20690543, 1000),
+              "shorts-look.jpg": (31094911, 1000),
+              "accessories-flatlay.jpg": (33482420, 1100),
+              "bag-accessories.jpg": (2986445, 1000),
+              "editorial-flatlay.jpg": (934064, 1200),
+          }
+          out = Path("assets/img/optimized")
+          out.mkdir(parents=True, exist_ok=True)
+          report = []
+          for filename, (photo_id, max_width) in photos.items():
+              url = f"https://images.pexels.com/photos/{photo_id}/pexels-photo-{photo_id}.jpeg?auto=compress&cs=tinysrgb&w=1800"
+              req = Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; MOStudioImageOptimizer/1.0)"})
+              with urlopen(req, timeout=45) as response:
+                  raw = response.read()
+              image = Image.open(BytesIO(raw))
+              image = ImageOps.exif_transpose(image).convert("RGB")
+              if image.width > max_width:
+                  height = round(image.height * max_width / image.width)
+                  image = image.resize((max_width, height), Image.Resampling.LANCZOS)
+              target = out / filename
+              image.save(target, "JPEG", quality=82, optimize=True, progressive=True, subsampling="4:2:0")
+              report.append({
+                  "file": filename,
+                  "source": f"https://www.pexels.com/photo/{photo_id}/",
+                  "dimensions": f"{image.width}x{image.height}",
+                  "bytes": target.stat().st_size
+              })
+          (out / "IMAGE_SOURCES.txt").write_text(
+              "MƠ STUDIO - IMAGE SOURCES\n"
+              "Photos are selected from individual Pexels photo pages and compressed to local progressive JPG files.\n"
+              "Pexels License: https://www.pexels.com/legal-pages/license/\n\n"
+              + "\n".join(f"{x['file']} | {x['source']} | {x['dimensions']} | {x['bytes']} bytes" for x in report)
+              + "\n",
+              encoding="utf-8"
+          )
+          print(json.dumps(report, indent=2))
+          PY
+      - name: Commit optimized JPG files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/img/optimized/*.jpg assets/img/optimized/IMAGE_SOURCES.txt
+          if git diff --cached --quiet; then
+            echo "No optimized images changed."
+          else
+            git commit -m "Add compressed local JPG photo assets [skip ci]"
+            git push
+          fi
