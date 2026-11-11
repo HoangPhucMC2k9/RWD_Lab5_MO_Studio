@@ -1,0 +1,17 @@
+MƠ STUDIO | IMAGE SOURCE REGISTER
+
+All photographs are selected from individual Pexels photo pages. The workflow downloads each chosen JPG, resizes it and saves an optimized local progressive JPEG in this directory.
+
+Pexels License: https://www.pexels.com/legal-pages/license/
+The license permits free use and modification, subject to its prohibited-use rules. Attribution is not mandatory; source pages are recorded here for transparency.
+
+hero-editorial.jpg | Ayşegül Delice | https://www.pexels.com/photo/modern-fashion-shoot-with-beige-outfit-and-chic-style-30415590/
+about-editorial.jpg | https://www.pexels.com/photo/woman-wearing-beige-blazer-in-studio-23531833/
+blazer-look.jpg | J-Scott Photography | https://www.pexels.com/photo/beautiful-woman-wearing-fashion-clothing-in-studio-shot-12324553/
+everyday-neutral.jpg | https://www.pexels.com/photo/studio-shot-of-fashion-model-9142805/
+casual-look.jpg | https://www.pexels.com/photo/woman-in-beige-blouse-skirt-and-sunglasses-holds-handbag-20167616/
+midi-look.jpg | Muneeb Malhotra | https://www.pexels.com/photo/model-in-beige-salwar-kameez-posing-in-studio-20690543/
+shorts-look.jpg | Pedro Furtado | https://www.pexels.com/photo/elegant-woman-posing-in-stylish-fashion-outfit-31094911/
+accessories-flatlay.jpg | elena_sher | https://www.pexels.com/photo/stylish-flat-lay-of-fashion-and-accessories-33482420/
+bag-accessories.jpg | Harper Sunday | https://www.pexels.com/photo/various-women-s-fashion-accessories-2986445/
+editorial-flatlay.jpg | Ylanite Koppens | https://www.pexels.com/photo/flatlay-photography-of-woman-s-things-934064/
