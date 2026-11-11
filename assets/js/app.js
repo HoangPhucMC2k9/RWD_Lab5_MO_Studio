@@ -1,14 +1,14 @@
 (() => {
 "use strict";
 const products=[
-{id:1,name:"Áo sơ mi Linen",category:"tops",label:"ÁO",price:"590.000₫",code:"ESSENTIAL / 01",tag:"BEST PICK",image:"../img/optimized/about-editorial.jpg"},
-{id:2,name:"Blazer Form Mềm",category:"tops",label:"ÁO",price:"1.290.000₫",code:"TAILORED / 02",tag:"NEW",image:"../img/optimized/blazer-look.jpg"},
-{id:3,name:"Áo thun Everyday",category:"tops",label:"ÁO",price:"390.000₫",code:"BASIC / 03",tag:"",image:"../img/optimized/everyday-neutral.jpg"},
-{id:4,name:"Quần Ống Suông",category:"bottoms",label:"QUẦN",price:"790.000₫",code:"BOTTOM / 04",tag:"",image:"../img/optimized/casual-look.jpg"},
-{id:5,name:"Chân Váy Midi",category:"bottoms",label:"VÁY",price:"690.000₫",code:"BOTTOM / 05",tag:"NEW",image:"../img/optimized/midi-look.jpg"},
-{id:6,name:"Quần Short Pleat",category:"bottoms",label:"QUẦN",price:"550.000₫",code:"BOTTOM / 06",tag:"",image:"../img/optimized/shorts-look.jpg"},
-{id:7,name:"Túi Mini Structure",category:"accessories",label:"TÚI",price:"850.000₫",code:"OBJECT / 07",tag:"LIMITED",image:"../img/optimized/accessories-flatlay.jpg"},
-{id:8,name:"Khăn Lụa Soft Touch",category:"accessories",label:"PHỤ KIỆN",price:"320.000₫",code:"OBJECT / 08",tag:"",image:"../img/optimized/bag-accessories.jpg"}
+{id:1,name:"Áo sơ mi Linen",category:"tops",label:"ÁO",price:"590.000₫",code:"ESSENTIAL / 01",tag:"BEST PICK",image:"assets/img/optimized/about-editorial.jpg"},
+{id:2,name:"Blazer Form Mềm",category:"tops",label:"ÁO",price:"1.290.000₫",code:"TAILORED / 02",tag:"NEW",image:"assets/img/optimized/blazer-look.jpg"},
+{id:3,name:"Áo thun Everyday",category:"tops",label:"ÁO",price:"390.000₫",code:"BASIC / 03",tag:"",image:"assets/img/optimized/everyday-neutral.jpg"},
+{id:4,name:"Quần Ống Suông",category:"bottoms",label:"QUẦN",price:"790.000₫",code:"BOTTOM / 04",tag:"",image:"assets/img/optimized/casual-look.jpg"},
+{id:5,name:"Chân Váy Midi",category:"bottoms",label:"VÁY",price:"690.000₫",code:"BOTTOM / 05",tag:"NEW",image:"assets/img/optimized/midi-look.jpg"},
+{id:6,name:"Quần Short Pleat",category:"bottoms",label:"QUẦN",price:"550.000₫",code:"BOTTOM / 06",tag:"",image:"assets/img/optimized/shorts-look.jpg"},
+{id:7,name:"Túi Mini Structure",category:"accessories",label:"TÚI",price:"850.000₫",code:"OBJECT / 07",tag:"LIMITED",image:"assets/img/optimized/accessories-flatlay.jpg"},
+{id:8,name:"Khăn Lụa Soft Touch",category:"accessories",label:"PHỤ KIỆN",price:"320.000₫",code:"OBJECT / 08",tag:"",image:"assets/img/optimized/bag-accessories.jpg"}
 ];
 const grid=document.getElementById("productGrid"),search=document.getElementById("productSearch"),empty=document.getElementById("emptyState"),count=document.getElementById("productCount");let activeFilter="all";
 function render(){if(!grid)return;const term=(search?.value||"").trim().toLocaleLowerCase("vi");const shown=products.filter(p=>(activeFilter==="all"||p.category===activeFilter)&&`${p.name} ${p.label} ${p.code}`.toLocaleLowerCase("vi").includes(term));grid.innerHTML=shown.map(p=>`<article class="col-6 col-lg-3"><div class="product-card"><div class="product-visual"><img src="${p.image}" alt="${p.name}, ảnh thời trang tham khảo" loading="lazy" decoding="async" width="900" height="1125">${p.tag?`<span class="product-badge">${p.tag}</span>`:""}<span class="product-code">${p.code}</span></div><div class="product-info"><div><h3>${p.name}</h3><p>${p.label} · MƠ Selection</p><div class="product-meta">Designed for everyday</div></div><span class="product-price">${p.price}</span></div></div></article>`).join("");empty?.classList.toggle("d-none",shown.length!==0);if(count)count.textContent=`Đang hiển thị ${shown.length} / 8 thiết kế`;}
