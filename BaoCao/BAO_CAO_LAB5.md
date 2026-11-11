@@ -25,6 +25,26 @@ HTML5, CSS3, Bootstrap 5.3, JavaScript ES6, CSS Grid, Flexbox, Media Queries, lo
 | Lighthouse Mobile | Chưa chạy | Bổ sung báo cáo |
 | Lighthouse Desktop | Chưa chạy | Bổ sung báo cáo |
 
+## Kết quả nén ảnh thực tế
+
+10 ảnh JPG đã được tải về và tối ưu bằng Pillow. Ảnh được chuyển sang RGB, xoay theo EXIF, resize theo kích thước hiển thị, lưu JPEG progressive với quality 82 và optimize.
+
+| Tệp ảnh | Kích thước | Dung lượng |
+|---|---:|---:|
+| hero-editorial.jpg | 1600 × 2477 | 206,810 B |
+| about-editorial.jpg | 1200 × 1671 | 102,529 B |
+| blazer-look.jpg | 1000 × 1500 | 85,342 B |
+| everyday-neutral.jpg | 1000 × 1500 | 112,753 B |
+| casual-look.jpg | 1000 × 1500 | 146,242 B |
+| midi-look.jpg | 1000 × 1500 | 181,254 B |
+| shorts-look.jpg | 1000 × 1500 | 67,155 B |
+| accessories-flatlay.jpg | 1100 × 1465 | 352,913 B |
+| bag-accessories.jpg | 1000 × 667 | 69,936 B |
+| editorial-flatlay.jpg | 1200 × 799 | 109,343 B |
+| **Tổng cộng** | **10 ảnh JPG** | **1,434,277 B (~1.37 MiB)** |
+
+Nguồn ảnh: `assets/img/optimized/IMAGE_SOURCES.txt`. Các tệp JPG đã được commit vào GitHub trong thư mục tối ưu. Đây là dung lượng sau nén; chưa có số liệu dung lượng ảnh gốc để tính phần trăm giảm.
+
 ## Kết luận
 Dự án đã có cấu trúc website ba trang, giao diện responsive và tương tác JavaScript cơ bản. Cần chạy kiểm thử trên trình duyệt, lưu ảnh minh chứng và bổ sung kết quả Lighthouse thực tế trước khi nộp.
 
