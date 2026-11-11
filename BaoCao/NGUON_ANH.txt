@@ -1,0 +1,14 @@
+MƠ STUDIO - IMAGE SOURCES
+Photos are selected from individual Pexels photo pages and compressed to local progressive JPG files.
+Pexels License: https://www.pexels.com/legal-pages/license/
+
+hero-editorial.jpg | https://www.pexels.com/photo/30415590/ | 1600x2477 | 206810 bytes
+about-editorial.jpg | https://www.pexels.com/photo/23531833/ | 1200x1671 | 102529 bytes
+blazer-look.jpg | https://www.pexels.com/photo/12324553/ | 1000x1500 | 85342 bytes
+everyday-neutral.jpg | https://www.pexels.com/photo/9142805/ | 1000x1500 | 112753 bytes
+casual-look.jpg | https://www.pexels.com/photo/20167616/ | 1000x1500 | 146242 bytes
+midi-look.jpg | https://www.pexels.com/photo/20690543/ | 1000x1500 | 181254 bytes
+shorts-look.jpg | https://www.pexels.com/photo/31094911/ | 1000x1500 | 67155 bytes
+accessories-flatlay.jpg | https://www.pexels.com/photo/33482420/ | 1100x1465 | 352913 bytes
+bag-accessories.jpg | https://www.pexels.com/photo/2986445/ | 1000x667 | 69936 bytes
+editorial-flatlay.jpg | https://www.pexels.com/photo/934064/ | 1200x799 | 109343 bytes
