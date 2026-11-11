@@ -43,7 +43,7 @@ HTML5, CSS3, Bootstrap 5.3, JavaScript ES6, CSS Grid, Flexbox, Media Queries, lo
 | editorial-flatlay.jpg | 1200 × 799 | 109,343 B |
 | **Tổng cộng** | **10 ảnh JPG** | **1,434,277 B (~1.37 MiB)** |
 
-Nguồn ảnh: `assets/img/optimized/IMAGE_SOURCES.txt`. Các tệp JPG đã được commit vào GitHub trong thư mục tối ưu. Đây là dung lượng sau nén; chưa có số liệu dung lượng ảnh gốc để tính phần trăm giảm.
+Nguồn ảnh: `BaoCao/NGUON_ANH.txt`. Các tệp JPG đã được commit vào GitHub trong thư mục tối ưu. Đây là dung lượng sau nén; chưa có số liệu dung lượng ảnh gốc để tính phần trăm giảm.
 
 ## Kết luận
 Dự án đã có cấu trúc website ba trang, giao diện responsive và tương tác JavaScript cơ bản. Cần chạy kiểm thử trên trình duyệt, lưu ảnh minh chứng và bổ sung kết quả Lighthouse thực tế trước khi nộp.
