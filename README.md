@@ -17,7 +17,7 @@ Mở `index.html` bằng VS Code Live Server. Bootstrap và ảnh Pexels đượ
 Settings → Pages → Deploy from a branch → main → /(root) → Save.
 
 ## Hình ảnh
-Ảnh thời trang thật được nhúng từ Pexels CDN. Nguồn ảnh và tác giả được liệt kê trong `assets/img/optimized/IMAGE_CREDITS.md`. Ảnh do các nhiếp ảnh gia sở hữu, sử dụng theo Pexels License.
+10 ảnh thời trang JPG thật đã được tải về, nén bằng Pillow và lưu trực tiếp trong `assets/img/optimized/`. Nguồn ảnh, kích thước và dung lượng nằm trong `assets/img/optimized/IMAGE_SOURCES.txt`. Ảnh sử dụng theo Pexels License.
 
 ## Lưu ý
 Form liên hệ chỉ lưu dữ liệu demo trên trình duyệt, không gửi tới máy chủ. Chạy Lighthouse và bổ sung ảnh minh chứng thực tế trước khi nộp.
