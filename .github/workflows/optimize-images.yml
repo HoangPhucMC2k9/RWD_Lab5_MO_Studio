@@ -3,8 +3,6 @@ name: Download and optimize MƠ Studio photos
 on:
   push:
     branches: [main]
-    paths:
-      - '.github/workflows/optimize-images.yml'
   workflow_dispatch:
 
 permissions:
